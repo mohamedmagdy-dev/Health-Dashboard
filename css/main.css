@@ -1,0 +1,299 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --text-color: #343434;
+  --red-color: #f80d38;
+  --main-blue: #100db1;
+  --main-border: 1px solid #e7e7e7;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Start Overview Page */
+.dashbord-wrap {
+  padding: 20px;
+  height: 100vh;
+  display: flex;
+  gap: 20px;
+}
+
+.dashbord-wrap aside {
+  height: 100%;
+  width: 270px;
+  background-color: #f7f7f7;
+  border-radius: 20px;
+  padding: 25px;
+}
+
+.dashbord-wrap aside header {
+  padding-bottom: 21px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.dashbord-wrap aside header::after {
+  content: "";
+  position: absolute;
+  left: -25px;
+  bottom: 0;
+  width: calc(100% + 50px);
+  height: 1px;
+  background-color: #d3d3d3;
+}
+
+.dashbord-wrap aside header button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.dashbord-wrap aside nav {
+  height: calc(100% - 165px);
+}
+
+.dashbord-wrap aside li.account {
+  font-size: 12px;
+  color: var(--text-color);
+  font-weight: bold;
+  margin-top: 45px;
+  margin-bottom: 28px;
+}
+
+.dashbord-wrap aside li a {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  height: 50px;
+  font-size: 12px;
+  color: var(--text-color);
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+.dashbord-wrap aside li:first-of-type a {
+  margin-top: 35px;
+}
+
+.dashbord-wrap aside li a.active {
+  position: relative;
+  z-index: 1;
+  color: var(--main-blue);
+}
+
+.dashbord-wrap aside li a.active::before {
+  content: "";
+  left: -25px;
+  height: 100%;
+  z-index: -1;
+  position: absolute;
+  width: calc(100% + 50px);
+  background-color: #dfe0e2;
+}
+
+.dashbord-wrap aside li a.chat {
+  position: relative;
+}
+
+.dashbord-wrap aside li a.chat::after {
+  position: absolute;
+  content: attr(data-msg);
+  width: 19px;
+  height: 15px;
+  background-color: var(--red-color);
+  border-radius: 10px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.dashbord-wrap aside li a.logouts {
+  color: var(--red-color);
+}
+
+/* .dashbord-wrap aside li a  */
+
+.dashbord-wrap aside footer {
+  display: flex;
+  gap: 10px;
+  position: relative;
+  padding-top: 27px;
+}
+
+.dashbord-wrap aside footer::before {
+  content: "";
+  position: absolute;
+  left: -25px;
+  top: 0;
+  width: calc(100% + 50px);
+  height: 1px;
+  background-color: #d3d3d3;
+}
+
+.dashbord-wrap aside footer .call-img {
+  background-color: var(--main-blue);
+  width: 27px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashbord-wrap aside footer span {
+  color: var(--red-color);
+  font-weight: bold;
+}
+
+.dashbord-wrap aside footer p {
+  font-size: 10px;
+  color: var(--text-color);
+}
+
+.dashbord-wrap main {
+  height: 100%;
+  width: calc(100% - 270px);
+  background-color: #eee;
+}
+/* End Overview Page */
+
+/* Start Login And Create Account Forms */
+.page-wrap {
+  background-color: var(--main-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+form {
+  background-color: white;
+  border: var(--main-border);
+  border-radius: 20px;
+  width: 560px;
+  max-width: calc(100% - 30px);
+  height: 672px;
+  max-height: calc(100% - 30px);
+  position: relative;
+  padding: 53px 56px 60px 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 12px;
+  color: var(--text-color);
+}
+
+form.create-account-form {
+  height: 762px;
+  margin-top: 77px;
+}
+
+form img[alt="exit.svg"] {
+  position: absolute;
+  top: -81px;
+  left: 50%;
+  transform: translateX(-50%) rotate(0deg);
+  transition: transform 0.3s;
+}
+
+form img[alt="exit.svg"]:hover {
+  transform: translateX(-50%) rotate(180deg);
+}
+
+form h1 {
+  font-size: 18px;
+  margin-top: 21px;
+  margin-bottom: 48px;
+  font-weight: 600;
+}
+
+form div {
+  width: 100%;
+}
+
+form div > label + input {
+  margin-top: 9px;
+}
+
+form div > input:not(input[type="checkbox"]),
+form input[type="submit"] {
+  width: 100%;
+  border: var(--main-border);
+  font-weight: 400;
+  height: 58px;
+  border-radius: 100px;
+  padding: 22px;
+  outline: none;
+  background-color: white;
+}
+
+form .email,
+form .name {
+  margin-bottom: 26px;
+}
+
+form .password {
+  margin-bottom: 13px;
+}
+
+form .row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 43px;
+}
+
+form .row .checkbox {
+  width: fit-content;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+form .row .checkbox label {
+  cursor: pointer;
+}
+
+form .row .checkbox input {
+  accent-color: var(--main-blue);
+}
+
+form .row a {
+  color: #100db1;
+}
+
+form input[type="submit"] {
+  background-color: var(--main-blue);
+  color: white;
+  cursor: pointer;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 405px) {
+  form {
+    padding: 30px;
+  }
+}
+/* End Login And Create Account Forms  */
